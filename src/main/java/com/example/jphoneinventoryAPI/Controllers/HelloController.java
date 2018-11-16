@@ -39,8 +39,8 @@ public class HelloController {
 
         private String toString(PhoneDetails details)
     {
-      return "Make:" + details.make + '\n' + "Model:" + details.model + '\n' +
-           "Price:" + details.price + '\n' + "Quantity:" + details.quantity;
+      return "Make:" + details.Make + '\n' + "Model:" + details.Model + '\n' +
+           "Price:" + details.Price + '\n' + "Quantity:" + details.Quantity;
     }
 
 }

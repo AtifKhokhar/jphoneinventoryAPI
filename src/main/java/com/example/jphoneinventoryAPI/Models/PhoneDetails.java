@@ -10,15 +10,15 @@ import lombok.Setter;
 @Setter
 public class PhoneDetails {
 
-    public String make;
-    public String model;
-    public int price;
-    public int quantity;
+    public String Make;
+    public String Model;
+    public int Price;
+    public int Quantity;
 
     public PhoneDetails(String make, String model, int price, int quantity) {
-        this.make = make;
-        this.model = model;
-        this.price = price;
-        this.quantity = quantity;
+        this.Make = make;
+        this.Model = model;
+        this.Price = price;
+        this.Quantity = quantity;
     }
 }
