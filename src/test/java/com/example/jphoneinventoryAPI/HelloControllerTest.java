@@ -32,21 +32,21 @@ public class HelloControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("Greetings from Spring Boot!")));
     }
-
-    @Test
-    public void shouldPost() throws Exception
-    {
-
-        PhoneDetails details = new PhoneDetails("Apple","IPhone 8", 699, 1);
-
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
-        ObjectWriter ow = mapper.writer();
-        String requestJson =ow.writeValueAsString(details);
-
-        mvc.perform(MockMvcRequestBuilders.post("/postPhoneInventories/")
-                .content(requestJson)
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }
+//
+//    @Test
+//    public void shouldPost() throws Exception
+//    {
+//
+//        PhoneDetails details = new PhoneDetails("Apple","IPhone 8", 699, 1);
+//
+//        ObjectMapper mapper = new ObjectMapper();
+//        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
+//        ObjectWriter ow = mapper.writer();
+//        String requestJson =ow.writeValueAsString(details);
+//
+//        mvc.perform(MockMvcRequestBuilders.post("/postPhoneInventories/")
+//                .content(requestJson)
+//                .accept(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk());
+//    }
 }
