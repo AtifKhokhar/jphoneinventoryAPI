@@ -39,4 +39,6 @@ dependencies {
 	testCompile "com.github.tomakehurst:wiremock:2.19.0"
 	compile group: 'org.codehaus.groovy.modules.http-builder', name: 'http-builder', version: '0.7.1'
 	compile 'com.github.tomakehurst:wiremock:2.19.0'
+	compile 'org.mongodb:mongo-java-driver:3.9.1'
+    compile 'org.springframework.boot:spring-boot-starter-data-mongodb:2.1.1.RELEASE'
 }

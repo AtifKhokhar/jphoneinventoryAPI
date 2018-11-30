@@ -1,12 +1,19 @@
 package com.example.jphoneinventoryAPI.Controllers;
 
 import com.example.jphoneinventoryAPI.Models.PhoneDetails;
+import com.example.jphoneinventoryAPI.Repository.PhoneDetailsRepository;
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Map;
 
 @RestController
 public class HelloController {
+
+    @Autowired
+    private PhoneDetailsRepository repository;
 
     @RequestMapping("/")
     public String index() {
@@ -20,15 +27,14 @@ public class HelloController {
         return toString(details);
     }
 
-//    @PostMapping("/postPhoneInventories/{make}/{model}/{price}/{quantity}")
-//    public String postPhoneInventories(@PathVariable("make") String make,
-//                                       @PathVariable("model") String model,
-//                                       @PathVariable("price") int price,
-//                                       @PathVariable("quantity") int quantity) {
-//        PhoneDetails details = new PhoneDetails(make,model, price, quantity);
-//
-//        return toString(details);
-//    }
+    @RequestMapping(value = "/DbPostPhoneInventories", method = RequestMethod.POST)
+      public PhoneDetails createPhoneInventoriesToDB(@Valid @RequestBody PhoneDetails PhoneDetails)
+    {
+        PhoneDetails.setId(ObjectId.get());
+        repository.save(PhoneDetails);
+
+      return PhoneDetails;
+    }
 
     @RequestMapping(value="/postPhoneInventories/",method = RequestMethod.POST, produces = "application/json")
     @ResponseBody
